@@ -5,9 +5,12 @@
 	<title>Sistema Pesquisa</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<style type="text/css">
-        *{
-            margin: 0%;
-            background-color: #e9e9e9;
+        body {
+        margin: 0;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        background-color: #f7f7f7;
         }
 		#pesquisaPaciente{
 			width:200px;

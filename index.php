@@ -7,6 +7,7 @@
 	<style type="text/css">
         *{
             margin: 0%;
+            background-color: #e9e9e9;
         }
 		#pesquisaPaciente{
 			width:200px;
@@ -16,16 +17,24 @@
             overflow: hidden;
             color: #383838;
             border-bottom: 1px solid #DCDCDC;
-            background-color: antiquewhite;
+            background-color: #e5e5e5;
             margin: 0%;
+            padding-left: 2%;
         }
         li {
-            float: left;
+            float: right;
             display: block;
             overflow: hidden;
+            margin-right: 62%;
+            margin-top: -2%;
         }                
         input{
             min-width: 300px;
+        }
+        label{
+            margin-bottom: 0px;
+            margin-top: 1%;
+            width: 17%;
         }
 	</style>
 	<script type="text/javascript" src="js/jquery-3.6.0.js"></script>

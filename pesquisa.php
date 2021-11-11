@@ -1,7 +1,9 @@
 <?php
+	//recebemos nosso par�metro vindo do form
+	$parametro = isset($_POST['pesquisaPaciente']) ? $_POST['pesquisaPaciente'] : null;
 	$parametro = isset($_POST['pesquisaPaciente']) ? $_POST['pesquisaPaciente'] : null;
 	$msg = "";
-
+	//come�amos a concatenar nossa tabela
 	$msg .="<table class='table table-hover'>";
 	$msg .="	<thead>";
 	$msg .="		<tr>";
@@ -12,7 +14,7 @@
 	$msg .="	</thead>";
 	$msg .="	<tbody>";
 				
-				
+				//requerimos a classe de conex�o
 				require_once('class/Conexao.class.php');
 					try {
 						$pdo = new Conexao(); 
@@ -26,15 +28,15 @@
 						}catch (PDOException $e){
 							echo $e->getMessage();
 						}	
+						//resgata os dados na tabela
 						if(count($resultado)){
 							foreach ($resultado as $res) {
 	$msg .="				<tr>";
 	$msg .="					<td>".$res['id_paciente']."</td>";
 	$msg .="					<td>".$res['nm_setor']."</td>";
 	$msg .="					<td>".$res['nm_leito']."</td>";
-	$msg .="				<td><button>Chamar paciente</button><td>";
+	$msg .="				<td><button onClick='recarrega(this)' value=".$res['id_paciente']."> Chamar Paciente </button><td>";
 	$msg .="				</tr>";
-							
 							}
 						}
 						else{
@@ -43,5 +45,6 @@
 						}
 	$msg .="	</tbody>";
 	$msg .="</table>";
+	//retorna a msg concatenada
 	echo $msg;
 ?>

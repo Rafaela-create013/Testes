@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8"/>
-	<title>Sistema Pesquisa</title>
+	<title>Painel de chamada</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<style type="text/css">
         body {
@@ -37,12 +37,19 @@
         label{
             margin-bottom: 0px;
             margin-top: 1%;
+            margin-right: 2%;
             width: 17%;
         }
 	</style>
 	<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
 
 	<script type="text/javascript">
+        //funcao que marca o id do botao selecionado e envia para a 
+        //outra URL
+       function recarrega(e) {      
+            console.log(e.value);
+            window.open(`chamou.php?id=${e.value}`);
+        }
 	$(document).ready(function(){
 
     //Aqui a ativa a imagem de load
@@ -81,12 +88,12 @@
     load_dados(null, 'pesquisa.php', '#MostraPesq');
     
     
-    //Aqui uso o evento key up para come�ar a pesquisar, se valor for maior q 0 ele faz a pesquisa
+    //Aqui uso o evento key up para pesquisar, se valor for maior q 0 ele faz a pesquisa
     $('#pesquisaPaciente').keyup(function(){
         
-        var valores = $('#form_pesquisa').serialize()//o serialize retorna uma string pronta para ser enviada
+        var valores = $('#form_pesquisa').serialize()//o serialize retorna uma string pronta
         
-        //pegando o valor do campo #pesquisaPaciente
+        //pegando os valores do input "pesquisaPaciente"
         var $parametro = $(this).val();
         
         if($parametro.length >= 1)
@@ -108,7 +115,8 @@
                     <li>
                         <div class="input-prepend">
                             <span class="add-on" ><i class="icon-search"></i></span>
-                            <input type="text" name="pesquisaPaciente" id="pesquisaPaciente" value=""  placeholder="Pesquisar cliente..." />
+                            <input type="text" name="pesquisaPaciente" id="pesquisaPaciente" value=""  placeholder="Pesquisar cliente..." />    
+
                         </div>
                     <div class="input-group mb-3">
                 </ul>

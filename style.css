@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    background-color: rgb(252, 252, 252);
+    }
+    #pesquisaPaciente{
+        width:200px;
+    }
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    border-bottom: 3px solid #2868A2;
+    background-color: #3d85c6;
+    margin: 0%;
+}
+p {
+    float: left;
+    display: block;
+    overflow: hidden;
+    margin-left: 3%;
+    margin-top: 1%;
+    font-size: 18px;
+    color:#fff;
+}     
+li {
+    float: left;
+    display: block;
+    overflow: hidden;
+    margin-left: 2%;
+    margin-top: 0.5%;
+}                  
+input{
+    min-width: 250px;
+}
+th{
+    font-size: 16px;
+    font: bolder;
+}
+
+td{
+    font-size: 15px;
+    color: black;
+}

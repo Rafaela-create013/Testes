@@ -55,7 +55,6 @@ $tela .="				</tr>";
         }
     echo $tela;
 ?>
-<textarea></textarea>
 
 
 

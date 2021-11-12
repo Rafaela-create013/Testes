@@ -1,3 +1,13 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Painel de leitos</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+
 <?php
 	//recebemos nosso par�metro vindo do form
 	$parametro = isset($_POST['pesquisaPaciente']) ? $_POST['pesquisaPaciente'] : null;
@@ -19,7 +29,7 @@
 					try {
 						$pdo = new Conexao(); 
 						$resultado = $pdo->select("SELECT * FROM tb_setor 
-													WHERE id_paciente LIKE '$parametro%' 
+													WHERE cd_paciente LIKE '$parametro%' 
 													OR nm_leito LIKE '$parametro%' 
 													OR nm_setor LIKE '$parametro%' 
 													ORDER BY nm_leito ASC");
@@ -32,10 +42,10 @@
 						if(count($resultado)){
 							foreach ($resultado as $res) {
 	$msg .="				<tr>";
-	$msg .="					<td>".$res['id_paciente']."</td>";
+	$msg .="					<td>".$res['cd_paciente']."</td>";
 	$msg .="					<td>".$res['nm_setor']."</td>";
 	$msg .="					<td>".$res['nm_leito']."</td>";
-	$msg .="				<td><button onClick='recarrega(this)' value=".$res['id_paciente']."> Chamar Paciente </button><td>";
+	$msg .="				<td><button onClick='reload (this)' value=".$res['cd_paciente']."> Chamar Paciente </button><td>";
 	$msg .="				</tr>";
 							}
 						}
@@ -48,3 +58,5 @@
 	//retorna a msg concatenada
 	echo $msg;
 ?>
+</body>
+</html>

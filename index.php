@@ -3,50 +3,17 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Painel de chamada</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<style type="text/css">
-        body {
-        margin: 0;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 14px;
-        line-height: 20px;
-        background-color: #f7f7f7;
-        }
-		#pesquisaPaciente{
-			width:200px;
-		}
-        ul {
-            list-style-type: none;
-            overflow: hidden;
-            color: #383838;
-            border-bottom: 1px solid #DCDCDC;
-            background-color: #e5e5e5;
-            margin: 0%;
-            padding-left: 2%;
-        }
-        li {
-            float: right;
-            display: block;
-            overflow: hidden;
-            margin-right: 62%;
-            margin-top: -2%;
-        }                
-        input{
-            min-width: 300px;
-        }
-        label{
-            margin-bottom: 0px;
-            margin-top: 1%;
-            margin-right: 2%;
-            width: 17%;
-        }
-	</style>
 	<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
-
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/b5987e7317.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 	<script type="text/javascript">
         //funcao que marca o id do botao selecionado e envia para a 
         //outra URL
-       function recarrega(e) {      
+       function reload(e) {      
             console.log(e.value);
             window.open(`chamou.php?id=${e.value}`);
         }
@@ -111,16 +78,16 @@
 <body>
 		<form name="form_pesquisa" id="form_pesquisa" method="post" action="">
             <ul>
-                <label>Painel de atendimentos</label>
+            <p>Painel de atendimentos</p>
                     <li>
                         <div class="input-prepend">
                             <span class="add-on" ><i class="icon-search"></i></span>
                             <input type="text" name="pesquisaPaciente" id="pesquisaPaciente" value=""  placeholder="Pesquisar cliente..." />    
-
                         </div>
                     <div class="input-group mb-3">
-                </ul>
-            </li>
+                </li>
+            </ul>
+            
 		</form>
            
 			<div id="contentLoading">
